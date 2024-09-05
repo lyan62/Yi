@@ -61,7 +61,7 @@ class Evaluator(object):
     
         question = sivqa[idx]
 
-        q, image_file, choices_str = sivqa_utils.format_question(question, show_food_name=args.show_food_name)
+        q, image_file, choices_str = sivqa_utils.format_question(question, lang=args.lang, show_food_name=args.show_food_name)
         text_prompt = sivqa_utils.format_text_prompt(q, choices_str, template=args.template, lang=args.lang)
         conv = self.format_prompt(text_prompt, args)
         prompt = conv.get_prompt()
